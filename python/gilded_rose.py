@@ -36,9 +36,15 @@ def increase_quality_by_one(item):
     item.quality = item.quality + 1
 
 
+def is_conjured(item):
+    return "Conjured" in item.name
+
+
 def decrease_quality(item):
     if item.quality > 0:
         if not is_sulfuras(item):
+            item.quality = item.quality - 1
+        if is_conjured(item):
             item.quality = item.quality - 1
 
 
