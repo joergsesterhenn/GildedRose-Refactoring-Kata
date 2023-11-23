@@ -53,11 +53,11 @@ def increase_quality(item):
 
 
 def is_sulfuras(item):
-    return item.name == "Sulfuras, Hand of Ragnaros"
+    return "Sulfuras" in item.name
 
 
 def is_backstage_pass(item):
-    return item.name == "Backstage passes to a TAFKAL80ETC concert"
+    return "Backstage passes" in item.name
 
 
 def is_aged_brie(item):
