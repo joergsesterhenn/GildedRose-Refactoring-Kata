@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
+from Item import Item
 from gilded_rose import *
 
 if __name__ == "__main__":
@@ -27,4 +28,4 @@ if __name__ == "__main__":
         for item in items:
             print(item)
         print("")
-        GildedRose(items).update_quality()
+        GildedRoseStockStatusUpdater(items).update_stock_status()
