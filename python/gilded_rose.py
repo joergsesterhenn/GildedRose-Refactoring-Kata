@@ -5,8 +5,9 @@ def update_item_quality(item):
         increase_quality(item)
     else:
         decrease_quality(item)
-    if not is_sulfuras(item):
-        decrease_sell_in(item)
+
+
+def update_item_quality_past_sell_in(item):
     if sell_in_date_passed(item):
         if is_aged_brie(item):
             if quality_not_yet_maxed(item):
@@ -16,6 +17,11 @@ def update_item_quality(item):
                 item.quality = 0
             else:
                 decrease_quality(item)
+
+
+def decrease_item_sell_in(item):
+    if not is_sulfuras(item):
+        item.sell_in = item.sell_in - 1
 
 
 def quality_not_yet_maxed(item):
@@ -28,10 +34,6 @@ def sell_in_date_passed(item):
 
 def increase_quality_by_one(item):
     item.quality = item.quality + 1
-
-
-def decrease_sell_in(item):
-    item.sell_in = item.sell_in - 1
 
 
 def decrease_quality(item):
@@ -70,6 +72,8 @@ class GildedRose(object):
     def update_quality(self):
         for item in self.items:
             update_item_quality(item)
+            decrease_item_sell_in(item)
+            update_item_quality_past_sell_in(item)
 
 
 class Item:
