@@ -1,4 +1,7 @@
-class Item:
+from abc import abstractmethod, ABC
+
+
+class Item(ABC):
     def __init__(self, name, sell_in, quality):
         self.name = name
         self.sell_in = sell_in
@@ -25,6 +28,8 @@ class Item:
     def is_sell_in_date_passed(self):
         return self.sell_in < 0
 
+    @abstractmethod
     def update(self):
         pass
+
 
