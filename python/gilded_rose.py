@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-class GildedRoseStockStatusUpdater(object):
+class GildedRoseInventoryStatusUpdater(object):
 
-    def __init__(self, items):
-        self.items = items
+    def __init__(self, inventory):
+        self.inventory = inventory
 
-    def update_stock_status(self):
-        for item in self.items:
-            item.update()
+    def age_by_one_day(self):
+        for item in self.inventory:
+            item.age()

@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
-from ItemFactory import ItemFactory
+from Item import Item
 from gilded_rose import *
 
 if __name__ == "__main__":
     print("OMGHAI!")
     items = [
-             ItemFactory.of(name="+5 Dexterity Vest", sell_in=10, quality=20),
-             ItemFactory.of(name="Aged Brie", sell_in=2, quality=0),
-             ItemFactory.of(name="Elixir of the Mongoose", sell_in=5, quality=7),
-             ItemFactory.of(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
-             ItemFactory.of(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
-             ItemFactory.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
-             ItemFactory.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
-             ItemFactory.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
-             ItemFactory.of(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
+             Item.of(name="+5 Dexterity Vest", sell_in=10, quality=20),
+             Item.of(name="Aged Brie", sell_in=2, quality=0),
+             Item.of(name="Elixir of the Mongoose", sell_in=5, quality=7),
+             Item.of(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
+             Item.of(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
+             Item.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
+             Item.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
+             Item.of(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
+             Item.of(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
 
     days = 2
@@ -28,4 +28,4 @@ if __name__ == "__main__":
         for item in items:
             print(item)
         print("")
-        GildedRoseStockStatusUpdater(items).update_stock_status()
+        GildedRoseInventoryStatusUpdater(items).age_by_one_day()
